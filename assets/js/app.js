@@ -56,9 +56,26 @@ var createImage = function(still, gif, alt){
 };
 
 // function to switch image source from still to gif
-var animate = function() {
-	
+var animate = function(img) {
+	// if src is still image
+	if ( $(img).attr("src") === $(img).attr("still") ) {
+		// change source to gif
+		$(img).attr("src", $(img).attr("gif"));
+		console.log("still true", img);
+	} else {
+		// change source to still
+		$(img).attr("src", $(img).attr("still"));
+		console.log("still false");
+	}
 };
+
+
+
+// change image state when clicked on
+$("#images").on("click", ".gPic", function() {
+	// run animate function
+	animate(this);
+});
 
 // track button clicking
 $("#gifButtons").on("click", ".gButton", function() {
@@ -76,6 +93,7 @@ $("#gifButtons").on("click", ".gButton", function() {
 		// loop through available data in response
 		for (var i = 0; i < response.data.length; i++) {
 			$("#images").append(createImage(response.data[i].images.fixed_width_still.url, response.data[i].images.fixed_width.url, response.data[i].title));
+			$("#images").append("Rating: '" + response.data[i].rating + "'");
 		}
 	});
 });
