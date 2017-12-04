@@ -92,8 +92,9 @@ $("#gifButtons").on("click", ".gButton", function() {
 		console.log(response);
 		// loop through available data in response
 		for (var i = 0; i < response.data.length; i++) {
-			$("#images").append(createImage(response.data[i].images.fixed_width_still.url, response.data[i].images.fixed_width.url, response.data[i].title));
-			$("#images").append("Rating: '" + response.data[i].rating + "'");
+			var gif = createImage(response.data[i].images.fixed_width_still.url, response.data[i].images.fixed_width.url, response.data[i].title);
+			$("#images").append(gif);
+			$("#images").append("<br />Rating: '" + response.data[i].rating + "'<br />");
 		}
 	});
 });
