@@ -31,7 +31,7 @@ var createButton = function(term){
 // function to render buttons to page
 var renderButtons = function() {
 	// clear button area
-	$("#gifButtons").empty();
+	$("#gifButtons").empty().append("<h3>Click Topic To Generate</h3>");
 	// loop through topic array
 	for (var i = 0; i < topics.length; i++) {
 		// append buttons to page
@@ -99,6 +99,8 @@ $("#gifButtons").on("click", ".gButton", function() {
 		method: "GET"
 	}).done(function(response) {
 		console.log(response);
+		// add instructions
+		$("#images").append("<h3>Click Image To Animate</h3>");
 		// loop through available data in response
 		for (var i = 0; i < response.data.length; i++) {
 			var gif = createImage(response.data[i].images.fixed_width_still.url, response.data[i].images.fixed_width.url, response.data[i].title);
