@@ -30,6 +30,8 @@ var createButton = function(term){
 
 // function to render buttons to page
 var renderButtons = function() {
+	// clear button area
+	$("#gifButtons").empty();
 	// loop through topic array
 	for (var i = 0; i < topics.length; i++) {
 		// append buttons to page
@@ -69,7 +71,14 @@ var animate = function(img) {
 	}
 };
 
-
+// track user submitting new button
+$("#addGif").on("click", function(event) {
+	event.preventDefault();
+	// add input to topics array
+	topics.push($("#gifInput").val().trim());
+	// repush buttons to page
+	renderButtons();
+});
 
 // change image state when clicked on
 $("#images").on("click", ".gPic", function() {
