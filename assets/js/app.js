@@ -78,6 +78,8 @@ $("#addGif").on("click", function(event) {
 	topics.push($("#gifInput").val().trim());
 	// repush buttons to page
 	renderButtons();
+	// clear input field
+	$("#gifInput").val("");
 });
 
 // change image state when clicked on
