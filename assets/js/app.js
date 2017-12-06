@@ -105,9 +105,12 @@ $("#gifButtons").on("click", ".gButton", function() {
 		$("#images").append("<h3>Click Image To Animate</h3>");
 		// loop through available data in response
 		for (var i = 0; i < response.data.length; i++) {
+			// create gif with attributes
 			var gif = createImage(response.data[i].images.fixed_width_still.url, response.data[i].images.fixed_width.url, response.data[i].title);
-			$("#images").append(gif);
-			$("#images").append("<br />Rating: '" + response.data[i].rating + "'<br />");
+			// create div with img and rating html
+			var add = $("<div>").append(gif, "<br /><p class='rating'>Rating: '" + response.data[i].rating + "'").addClass("gifContainer");
+			// append add object to page
+			$("#images").append(add);
 		}
 	});
 });

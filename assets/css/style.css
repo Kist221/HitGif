@@ -1,0 +1,15 @@
+
+h1, h2, h3, h6, p, li, form, label, div {
+	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+body {
+	background: lightgrey;
+	background: url(../images/ep_naturalblack.png);
+    background-repeat: repeat;
+    background-size: 30%;
+}
+
+.gifContainer {
+	display: inline-block;
+}
