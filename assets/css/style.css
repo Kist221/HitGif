@@ -5,9 +5,6 @@ h1, h2, h3, h6, p, li, form, label, div {
 
 body {
 	background: lightgrey;
-	background: url(../images/ep_naturalblack.png);
-    background-repeat: repeat;
-    background-size: 30%;
 }
 
 .gifContainer {
