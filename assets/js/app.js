@@ -63,11 +63,11 @@ var animate = function(img) {
 	if ( $(img).attr("src") === $(img).attr("still") ) {
 		// change source to gif
 		$(img).attr("src", $(img).attr("gif"));
-		console.log("still true", img);
+		console.log("still img true ", img);
 	} else {
 		// change source to still
 		$(img).attr("src", $(img).attr("still"));
-		console.log("still false");
+		console.log("still img false");
 	}
 };
 
@@ -101,8 +101,6 @@ $("#gifButtons").on("click", ".gButton", function() {
 		method: "GET"
 	}).done(function(response) {
 		console.log(response);
-		// add instructions
-		$("#images").append("<h3>Click Image To Animate</h3>");
 		// loop through available data in response
 		for (var i = 0; i < response.data.length; i++) {
 			// create gif with attributes
@@ -112,6 +110,8 @@ $("#gifButtons").on("click", ".gButton", function() {
 			// append add object to page
 			$("#images").append(add);
 		}
+		// add instructions
+		$("#images").append('<h3 class="text-center">Click An Image To Animate</h3>');
 	});
 });
 

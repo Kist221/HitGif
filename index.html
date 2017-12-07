@@ -7,26 +7,38 @@
 	<title>Perfect GIF Finder</title>
 	<!-- reset stylesheet -->
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<!-- custom stylesheet -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!-- jquery  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<h1>What GIF are you looking for?</h1>
 
-<form>
-  <span id="add-topic"><input id="gifInput" type="text"><input id="addGif" value="Add Topic" type="submit"></span>
-</form>
+<div class="container text-center">
 
-<hr>
+	<h1>What GIF are you looking for?</h1>
 
-<!-- buttons go here -->
-<div id="gifButtons"></div>
+	<br>
 
-<!-- images go here -->
-<div id="images"></div>
+	<form>
+	  <span id="add-topic"><input id="gifInput" type="text"><input id="addGif" value="Add Topic" type="submit"></span>
+	</form>
 
+	<br>
+	<hr>
+	<br>
+
+	<!-- buttons go here -->
+	<div id="gifButtons"></div>
+
+	<br>
+
+	<!-- images go here -->
+	<div id="images"></div>
+
+</div>
 <!-- Link .js -->
 <script src="assets/js/app.js"></script>
 </body>
